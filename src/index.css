@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Test Lab Retro Theme ─────────────────────────────────── */
+:root {
+  --tl-bg:          #ceeaa8;
+  --tl-header-bg:   #4a9a2e;
+  --tl-header-border: #2d6e18;
+  --tl-title:       #8b0000;
+  --tl-btn-bg:      #55dd00;
+  --tl-btn-hover:   #3dbb00;
+  --tl-btn-border:  #228800;
+  --tl-btn-ghost:   #e0f8cc;
+  --tl-card-bg:     #e4f8cc;
+  --tl-card-border: #5aaa38;
+  --tl-input-border:#5aaa38;
+  --tl-success:     #1a7f1a;
+  --tl-error:       #8b0000;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', Arial, sans-serif;
+  background-color: var(--tl-bg);
+  min-height: 100vh;
+}
+
+/* ─── Typography ────────────────────────────────────────────── */
+.tl-title {
+  color: var(--tl-title);
+  font-weight: 800;
+}
+
+.tl-subtitle {
+  color: #2d6e18;
+  font-weight: 700;
+}
+
+/* ─── Header ─────────────────────────────────────────────────── */
+.tl-header {
+  background-color: var(--tl-header-bg);
+  border-bottom: 3px solid var(--tl-header-border);
+}
+
+.tl-header-brand {
+  color: var(--tl-title);
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+.tl-header-user {
+  background-color: rgba(0,0,0,0.15);
+  border-radius: 6px;
+  padding: 3px 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────── */
+.tl-btn {
+  background-color: var(--tl-btn-bg);
+  border: 2px solid var(--tl-btn-border);
+  color: #000;
+  font-weight: 700;
+  font-family: 'Nunito', Arial, sans-serif;
+  border-radius: 6px;
+  padding: 6px 18px;
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.1s;
+  font-size: 0.9rem;
+}
+.tl-btn:hover  { background-color: var(--tl-btn-hover); }
+.tl-btn:active { transform: scale(0.97); }
+.tl-btn:disabled {
+  background-color: #b0d890;
+  border-color: #7aaa60;
+  color: #555;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.tl-btn-red {
+  background-color: #cc2222;
+  border: 2px solid #880000;
+  color: #fff;
+  font-weight: 700;
+  font-family: 'Nunito', Arial, sans-serif;
+  border-radius: 6px;
+  padding: 6px 18px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  font-size: 0.9rem;
+}
+.tl-btn-red:hover { background-color: #aa0000; }
+
+.tl-btn-ghost {
+  background-color: var(--tl-btn-ghost);
+  border: 2px solid var(--tl-card-border);
+  color: #2d6e18;
+  font-weight: 700;
+  font-family: 'Nunito', Arial, sans-serif;
+  border-radius: 6px;
+  padding: 6px 18px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  font-size: 0.9rem;
+}
+.tl-btn-ghost:hover { background-color: #cef0aa; }
+
+/* ─── Cards ──────────────────────────────────────────────────── */
+.tl-card {
+  background-color: var(--tl-card-bg);
+  border: 2px solid var(--tl-card-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.tl-card-white {
+  background-color: #f4fff0;
+  border: 2px solid var(--tl-card-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+/* ─── Inputs ─────────────────────────────────────────────────── */
+.tl-input {
+  background-color: #fff;
+  border: 2px solid var(--tl-input-border);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-family: 'Nunito', Arial, sans-serif;
+  font-size: 0.9rem;
+  width: 100%;
+  outline: none;
+}
+.tl-input:focus { border-color: #2d6e18; box-shadow: 0 0 0 2px rgba(90,170,56,0.25); }
+
+.tl-label {
+  color: var(--tl-title);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ─── Progress bar ───────────────────────────────────────────── */
+.tl-progress-track {
+  background-color: #a5d87a;
+  border: 1px solid #5aaa38;
+  border-radius: 6px;
+  height: 14px;
+  overflow: hidden;
+}
+.tl-progress-fill {
+  background-color: var(--tl-title);
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.4s ease;
+}
+
+/* ─── Feedback messages ──────────────────────────────────────── */
+.tl-feedback-ok {
+  background-color: #d4f7d4;
+  border: 2px solid #2d8f2d;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #1a5e1a;
+}
+.tl-feedback-err {
+  background-color: #fdd;
+  border: 2px solid #990000;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #660000;
+}
+
+/* ─── Option buttons (quiz) ──────────────────────────────────── */
+.tl-option {
+  width: 100%;
+  text-align: left;
+  background-color: #f4fff0;
+  border: 2px solid #5aaa38;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: 'Nunito', Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.15s;
+}
+.tl-option:hover:not(:disabled) { background-color: #dcf5c0; }
+.tl-option-correct  { background-color: #c0f0c0 !important; border-color: #1a7f1a !important; color: #0a4f0a; cursor: default; }
+.tl-option-wrong    { background-color: #f9d0d0 !important; border-color: #8b0000 !important; color: #5a0000; cursor: default; }
+.tl-option-selected { background-color: #b8e8f8 !important; border-color: #1a6090 !important; }
+.tl-option-disabled { background-color: #eee !important; border-color: #bbb !important; color: #888; cursor: default; }
+
+/* ─── Section number badge ───────────────────────────────────── */
+.tl-badge {
+  background-color: var(--tl-title);
+  color: #fff;
+  font-weight: 800;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
